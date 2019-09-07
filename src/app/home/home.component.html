@@ -1,0 +1,38 @@
+<vbm-title title="Home"></vbm-title>
+
+<h3>{{test}}</h3> 
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> S.No</th>
+            <th> Id </th>
+            <th> Name </th>
+            <th> email </th>
+            <th> City </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+        placement="top"
+            (click)="navigateToUserEdit(data.id)" *ngFor="let data of students; let i = index;" class="{{i % 2 == 0 ? 'bg-success': 'bg-danger'}}">
+            <td>
+                {{i}}
+            </td>
+            <td>
+                {{data.id}}
+            </td>
+            <td>
+                {{data.name}}
+            </td>
+
+            <td>
+                {{data.email}}
+            </td>
+            <td>
+                {{data.address.city}}
+            </td>
+        </tr>
+    </tbody>
+</table>
